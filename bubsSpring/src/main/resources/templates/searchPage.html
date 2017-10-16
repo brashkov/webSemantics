@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/layout">
+<head lang="en">
+<title>Search</title>
+<link href="/webjars/materializecss/0.95.3/css/materialize.css"
+	type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body>
+	<div class="row" layout:fragment="content">
+		<h4 class="indigo-text center">Search By First Name</h4>
+		<div class="col s6 offset-s3">
+			<div id="errorMessage" class="card-panel red lighten-2"
+				th:if="${errmsg1}">
+				<span class="card-title" th:text="${errmsg1}"></span>
+			</div>
+			<form action="/firstName" method="post" class="col s12">
+				<div class="row center">
+					<div class="input-field col s6 offset-s3">
+						<i class="mdi-action-search prefix"></i> <input id="search"
+							name="search" type="text" class="validate" /> <label
+							for="search">Search</label>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row" layout:fragment="content">
+		<h4 class="indigo-text center">Search By Last Name</h4>
+		<div class="col s6 offset-s3">
+			<div id="errorMessage" class="card-panel red lighten-2"
+				th:if="${errmsg2}">
+				<span class="card-title" th:text="${errmsg2}"></span>
+			</div>
+			<form action="/lastName" method="post" class="col s12">
+				<div class="row center">
+					<div class="input-field col s6 offset-s3">
+						<i class="mdi-action-search prefix"></i> <input id="search"
+							name="search" type="text" class="validate" /> <label
+							for="search">Search</label>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row" layout:fragment="content">
+		<h4 class="indigo-text center">ShowAll</h4>
+		<div class="col s6 offset-s3">
+			<div id="errorMessage" class="card-panel red lighten-2"
+				th:if="${errmsgA}">
+				<span class="card-title" th:text="${errmsgA}"></span>
+			</div>
+			<form action="/showAll" method="get" class="col s12">
+				<div class="row center">
+					<div class="input-field col s6 offset-s3">
+						<button class="btn waves-effect waves-light" type="submit">Show
+							All Records</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="/webjars/jquery/2.1.4/jquery.js"></script>
+	<script src="/webjars/materializecss/0.95.3/js/materialize.js"></script>
+</body>
+</html>
